@@ -73,7 +73,7 @@ class _PhotoPageState extends State<PhotoPage> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ChoiceChip(
-          label: const Text('� Собаки'),
+          label: const Text('🐶 Собаки'),
           selected: _animalType == Photo_Type.dog,
           onSelected: (selected) {
             if (selected) {
@@ -153,7 +153,7 @@ class _PhotoPageState extends State<PhotoPage> {
 
   Widget _buildButton() {
     String label = _animalType == Photo_Type.dog
-        ? '� Новая собака'
+        ? '🐶 Новая собака'
         : '🌄 Новый пейзаж';
 
     return ElevatedButton(

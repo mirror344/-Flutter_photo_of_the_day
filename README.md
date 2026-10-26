@@ -1,17 +1,35 @@
-# photo_of_the_day_dudakov
+# Лабораторная работа №8. Асинхронность в Dart и Flutter. Создание приложения «Фото дня»
+Приложение «Фото дня» показывает случайное изображение через публичные API.
 
-A new Flutter project.
+## Информация об авторе
+Дудаков Иван\
+ИСП-241
 
-## Getting Started
+## Стек и версии
+* Flutter 3.47.2
+* Dart 3.13.2
+* Платформа: Web(Chrome)
+* Пакет: http
 
-This project is a starting point for a Flutter application.
+## Скриншот приложения
+![Скриншот приложения](/img/step2_Dudakov.png)
 
-A few resources to get you started if this is your first Flutter project:
+## Запуск
+1. `git clone <url>`
+2. `cd photo_of_the_day`
+3. `flutter pub get`
+4. `flutter run -d chrome`
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Было изучено
+1. Объект `Future<T>` обещает вернуть значение типа `T` в будущем
+2. `async/await` делают асинхронный код похожим на обычный синхронный
+3. Пакет `http` используется для HTTP-запросов
+4. Uri.parse() преобразует строку в объект URL
+5. jsonDecode(response.body) — парсит JSON из тела ответа
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Ответы на вопросы
+1. `Future<T>` — это объект, который обещает вернуть значение типа T в будущем
+2. `await` приостанавливает выполнение функции до получения результата, не блокируя весь поток
+3. `setState()` вызывается дважды, чтобы сначала показать загрузку и сбросить предыдущий результат, а в конце для скрытия загрузки после получения результата
+4. Кнопке передаётся `_fetchPhoto` без скобок, так как предается ссылка на функцию, а не вызывается
+5. `Image.network()` загружает картинки по URL из интернета в режиме реального времени, а `Image.asset()` загружает изображения из локальных ресурсов
